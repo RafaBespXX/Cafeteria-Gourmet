@@ -1,0 +1,282 @@
+/* ====================== */
+/*   TEMA CAFÉ ROSÉ SUAVE */
+/* ====================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --bg-dark: #FCEEF5;        /* Rosa pastel de fundo */
+  --bg-card: #FFF9F7;        /* Bege rosado claro */
+  --caramel: #E9AFAF;        /* Rosa antigo suave */
+  --text-light: #4B2E2E;     /* Marrom rosado para contraste */
+  --text-muted: #A87C7C;     /* Rosa amarronzado sutil */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  display: flex;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: var(--bg-card);
+  padding: 20px;
+  border-right: 2px solid var(--caramel);
+}
+
+.sidebar .logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--caramel);
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 14px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: var(--caramel);
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* HEADER */
+.admin-header h1 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  color: var(--caramel);
+}
+
+/* SEÇÕES */
+.section {
+  display: none;
+}
+
+.section.visible {
+  display: block;
+}
+
+/* CARDS GRID */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 20px;
+}
+
+/* CARD DE PRODUTO/PEDIDO */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--caramel);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  color: var(--caramel);
+  margin-bottom: 6px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* BOTÕES */
+.card button,
+#logout-admin {
+  width: 100%;
+  padding: 8px;
+  background: var(--caramel);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.3s;
+  color: #fff;
+}
+
+.card button:hover,
+#logout-admin:hover {
+  background: #d79696;
+}
+
+/* STATUS DO PEDIDO */
+.status {
+  padding: 5px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.status.pendente {
+  background: #f5c4c4;
+  color: #5c3a3a;
+}
+.status.preparando {
+  background: #f2b2b2;
+  color: #4b2e2e;
+}
+.status.entregue {
+  background: #C3E6CB;
+  color: #2e4730;
+}
+
+/* CARD DE PRODUTO */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card .card-info {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.product-card .description {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    height: 3em;
+    overflow: hidden;
+}
+
+.product-card strong {
+    color: var(--caramel);
+}
+
+/* GRUPO DE BOTÕES */
+.button-group {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.button-group button {
+    flex: 1;
+    margin-top: 0;
+}
+
+.btn-delete {
+    background: #e46e6e !important;
+    color: #fff !important;
+}
+
+.btn-delete:hover {
+    background: #cc5c5c !important;
+}
+
+/* STATUS BADGE */
+.status-badge {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.active-status {
+    background: #C3E6CB;
+    color: #2e4730;
+}
+
+.inactive-status {
+    background: #fbe7e7;
+    color: var(--text-light);
+}
+
+/* CARD DE PEDIDO */
+.order-card .card-info {
+    text-align: left;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--caramel);
+}
+
+.order-card select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid var(--caramel);
+    background: var(--bg-card);
+    color: var(--text-light);
+}
+
+.order-status {
+    color: var(--bg-card) !important;
+}
+
+/* STATUS DO PEDIDO (cores suaves) */
+.order-status.em-preparo {
+    background: #f8c9d4;
+}
+.order-status.a-caminho {
+    background: #f9dce6;
+}
+.order-status.entregue {
+    background: #c6e5ca;
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-primary {
+    background: var(--caramel);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+    display: block;
+    width: fit-content;
+}
+
+.btn-primary:hover {
+    background: #d79696;
+}

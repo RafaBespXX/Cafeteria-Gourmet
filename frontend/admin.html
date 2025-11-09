@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin - Cafeteria Gourmet</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2 class="logo">Café Admin</h2>
+    <ul>
+      <li class="active" data-section="produtos">Produtos</li>
+      <li data-section="pedidos">Pedidos</li>
+      <li id="logout-admin">Sair</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <!-- HEADER -->
+    <header class="admin-header">
+      <h1>Painel Administrativo</h1>
+    </header>
+
+    <!-- SEÇÃO PRODUTOS -->
+    <section id="sec-produtos" class="section visible">
+      <h2>Gerenciar Produtos</h2>
+      <button id="btn-add-product" class="btn-primary">
+          + Adicionar Novo Produto
+      </button>
+      <div id="lista-produtos" class="cards-container">
+        <!-- Cards gerados via JS -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO PEDIDOS -->
+    <section id="sec-pedidos" class="section">
+      <h2>Gerenciar Pedidos</h2>
+      <div id="lista-pedidos" class="cards-container">
+        <!-- Cards gerados via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
